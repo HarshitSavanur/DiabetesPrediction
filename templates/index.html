@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Diabetes Prediction Model</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="container_heading"><span class="heading_font">Diabetes Prediction</span></h1>
+        </div>
+
+        <div class='ml-container'>
+            <form action="{{ url_for('predict') }}" method="POST">
+                <br>
+                <h3>How many Pregnancies you had?</h3>
+                <input id="first" name='Pregnancies' placeholder="Number of Pregnancies" required='required'>
+                <br>
+                <h3>How much is your plasma Glucose concentration ?</h3>
+                <input id="second" name='Glucose' placeholder="Glucose Level" required='required'>
+                <br>
+                <h3>How much is your diastolic Blood Presssure ? (in mm Hg)</h3>
+                <input id="third" name='BloodPressure' placeholder="Blood Pressure in mm Hg" required='required'>
+                <br>
+                <h3>How much is your triceps skin fold thickness ? (in mm) </h3>
+                <input id="fourth" name='SkinThickness' placeholder="Skin Thickness in mm" required='required'>
+                <br>
+                <h3>2-Hour serum insulin ? (in mu U/ml)</h3>
+                <input id="fifth" name='Insulin' placeholder="Insulin level" required='required'>
+                <br>
+                <h3>How much is your Body Mass Index ? (in kg/(m)²)</h3>
+                <input id="sixth" name='BMI' placeholder="Body Mass Index" required='required'>
+                <br>
+                <h3>How much is your Diabetes Pedigree Function value ?</h3>
+                <input id="seventh" name='DiabetesPedigreeFunction' placeholder="Diabetes Pedigree Function" required='required'>
+                <br>
+                <h3>How old are you ?</h3>
+                <input id="eighth" name='Age'placeholder="Age in years" required='required'>
+                <br>
+                <br>
+                <br>
+                <button id="sub" type="submit">Predict</button>
+                <br>
+                <br>
+                <h3>{{ prediction }}</h3>
+                <br>
+                <br>
+                <br>
+                <p class="footer-description">©2021 Sumit Mohod</p>               
+            </form>
+        </div>
+
+        <style>
+            /* Background Image */
+            body{
+                background-image: url("https://www.clinicaladvisor.com/wp-content/uploads/sites/11/2021/01/diabetes_G_1153457602-860x573.jpg");
+                height: 100%;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            /* Color */
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            /* Heading Title */
+            .container{
+                width: 600px;
+                background-color: rgba(63, 70, 66, 0.8);
+                margin: auto;
+                color: white;
+                padding: 5px 0px 5px 0px;
+                text-align: center;
+                border-radius: 15px 15px 15px 15px;
+            }
+
+            /* Box */
+            #first{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #second{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #third{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #fourth{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #fifth{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #sixth{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #seventh{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            #eighth{
+                border-radius: 60px;
+                border-style: solid;
+                text-align: center;
+                width: 300px;
+                height: 40px;
+                right: 30%;
+                font-size: 18px;
+            }
+
+            /* Predict Button */
+            #sub{
+                width: 10%;
+                height: 45px;
+                background-color: aqua;
+                text-align: center;
+                border-radius: 15px;
+                font-size: 20px;
+                text-shadow: 10px;
+                color: blue;
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .footer-description{
+                color: black;
+                padding: 0px;
+            }
+        </style>
+    </body>
+</html>

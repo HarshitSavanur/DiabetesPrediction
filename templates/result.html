@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale 1.0">
+        <title>result</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1 class="container_heading"><span class="heading_font">Diabetes Prediction</span></h1>
+        </div>
+
+        <div>
+            <form action="{{ url_for('predict') }}" method="POST">               
+                <br><br><br>
+                <br><br>
+                
+                <!-- Result -->
+                <div class="results">
+                    {% if prediction == 1 %}
+                    <h2><span class="danger">Oops! <br>You have Diabetes.</span></h2>
+                    <img class="gif" src="{{ url_for('static', filename='sad.webp') }}" alt='Diabetes Image'><br>
+                    {% elif prediction == 0 %}
+                    <h2><span class="safe">Congratulations! <br>You don't have diabetes.</span></h2>
+                    <img class="gif1" src="{{ url_for('static', filename='happy.webp') }}" alt='No Diabetes Image'><br>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p class="footer_description">©2021 Sumit Mohod</p>
+        </div>
+
+        <style>
+            /* Background Image */
+            body{
+                background-image: url("https://www.clinicaladvisor.com/wp-content/uploads/sites/11/2021/01/diabetes_G_1153457602-860x573.jpg");
+                height: 100%;
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            /* Color */
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            
+            /* Heading Title */
+            .container{
+                width: 600px;
+                background-color: rgba(63, 70, 66, 0.8);
+                margin: auto;
+                color: white;
+                padding: 5px 0px 5px 0px;
+                text-align: center;
+                border-radius: 15px 15px 15px 15px;
+                }
+                
+        </style>
+    </body>
+</html>
